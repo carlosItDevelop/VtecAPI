@@ -1,0 +1,144 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Areas/Administrar/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<div class="inner-box">
+    <div class="plan-header text-center mb-2">
+        <div class="plan-title bg-success py-2">
+            <h4 class="text-uppercase text-white font-16 my-0 ">Ambiente Modelo / Cadastro</h4>
+        </div>
+    </div>
+    <div class="plan-stats p-1">
+        <div class="form-row">
+            <div class="form-group col-md-8">
+                <label for="inputDescricao" class="col-form-label">Descrição</label>
+                <input type="text" class="form-control" id="inputDescricao">
+            </div>
+            <div class="form-group col-md-4">
+                <br />
+                <br />
+                <div class="checkbox checkbox-primary">
+                    <input id="checkbox2" type="checkbox">
+                    <label for="checkbox2">
+                        Ativo
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="card-box">
+            @*Lado Esquerdo*@
+            <div class="inbox-leftbar">
+                <a href="#" data-toggle="modal" data-target="#adicionar-item" class="btn btn-lg font-16 btn-primary btn-block waves-effect m-t-20 waves-light">
+                    <i class="mdi mdi-plus-circle-outline"></i>Adicionar Item
+                </a>
+                <div class="list-group b-0">
+                    <br>
+                    <div class="external-event bg-success" data-class="bg-success">
+                        <i class="mdi mdi-pencil mr-2 vertical-middle"></i>Quarto
+                    </div>
+                    <div class="external-event bg-info" data-class="bg-info">
+                        <i class="mdi mdi-pencil mr-2 vertical-middle"></i>Sala
+                    </div>
+                    <div class="external-event bg-warning" data-class="bg-warning">
+                        <i class="mdi mdi-pencil mr-2 vertical-middle"></i>Banheiro
+                    </div>
+                    <div class="external-event bg-danger" data-class="bg-danger">
+                        <i class="mdi mdi-pencil mr-2 vertical-middle"></i>Aréa Serviço
+                    </div>
+                </div>
+            </div>
+
+            @*Lado Direito*@
+            <div class="inbox-rightbar">
+                <div class="form-group col-md-12 bg-danger">
+                    <label for="inputDescricao" class="col-form-label ">Piso de Cerâmica</label>
+                </div>
+                <a href="#" data-toggle="modal" data-target="#adicionar-Subitem" class="btn btn-lg font-16 btn-primary btn-block waves-effect m-t-20 waves-light">
+                    <i class="mdi mdi-plus-circle-outline"></i>Adicionar SubItem
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL INICIO -->
+<div class="modal fade" id="adicionar-item" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <h4 class="modal-title">Adicionar Item do Ambiente</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-3">
+                <form>
+                    <div class="form-group">
+                        <label class="control-label">Nome do Item</label>
+                        <input class="form-control form-white" placeholder="Digite o Nome" type="text" name="NomeDoItem" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Escolha a Core</label>
+                        <select class="form-control form-white" data-placeholder="Escolha a Cor..." name="Item-cor">
+                            <option value="primary">Azul</option>
+                            <option value="success">Verde</option>
+                            <option value="danger">Vermelho</option>
+                            <option value="info">Azul Claro</option>
+                            <option value="warning">Laranja</option>
+                            <option value="dark">Preto</option>
+                        </select>
+                    </div>
+
+                </form>
+
+                <div class="text-right">
+                    <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Sair</button>
+                    <button type="button" class="btn btn-primary ml-1 waves-effect waves-light save-Item" data-dismiss="modal">Salvar</button>
+                </div>
+            </div> <!-- end modal body-->
+        </div> <!-- end modal content -->
+    </div> <!-- end modal dialog-->
+</div>
+
+<div class="modal fade" id="adicionar-Subitem" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <h4 class="modal-title">Adicionar Sub Item do Ambiente</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-3">
+                <form>
+                    <div class="form-group">
+                        <label class="control-label">Nome do Item</label>
+                        <input class="form-control form-white" placeholder="Digite o Sub Item" type="text" name="NomeDoSubItem" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Escolha a Core</label>
+                        <select class="form-control form-white" data-placeholder="Escolha a Cor..." name="Item-cor">
+                            <option value="primary">Azul</option>
+                            <option value="success">Verde</option>
+                            <option value="danger">Vermelho</option>
+                            <option value="info">Azul Claro</option>
+                            <option value="warning">Laranja</option>
+                            <option value="dark">Preto</option>
+                        </select>
+                    </div>
+
+                </form>
+
+                <div class="text-right">
+                    <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Sair</button>
+                    <button type="button" class="btn btn-primary ml-1 waves-effect waves-light save-Item" data-dismiss="modal">Salvar</button>
+                </div>
+            </div> <!-- end modal body-->
+        </div> <!-- end modal content -->
+    </div> <!-- end modal dialog-->
+</div>
